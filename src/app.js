@@ -9,6 +9,7 @@ const app = express();
 app.use(express.json()); // Middleware to parse JSON bodies (req.body)
 
 console.log("CLIENT_URL =", env.CLIENT_URL);
+app.use(cookieParser()); // Middleware to parse cookies
 
 app.use(
   cors({
@@ -16,8 +17,6 @@ app.use(
     credentials: true, // Allow cookies to be sent with requests
   }),
 );
-
-app.use(cookieParser()); // Middleware to parse cookies
 
 app.use("/api/auth", authRoutes);
 
