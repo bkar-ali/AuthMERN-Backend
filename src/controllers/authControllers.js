@@ -21,6 +21,7 @@ export const test = async (req, res) => {
     console.log("Test Error is :", error);
   }
 };
+
 export const signup = async (req, res) => {
   const { email, password, name } = req.body;
   try {
