@@ -2,6 +2,7 @@ import jwt from "jsonwebtoken";
 import { env } from "../config/env.js";
 
 export const verifyToken = (req, res, next) => {
+  console.log("COOKIES:", req.cookies);
   const token = req.cookies.token;
   if (!token) {
     return res
